@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Sixteen CLOTHING">
+    <meta property="og:image" content="https://img.freepik.com/premium-vector/circle-floral-fashion-store-hanger-logo-design-vector_680355-4.jpg">
+    <meta property="og:title" content="SIXTEEN  CLOTHING">
+    <meta property="og:description" content="Clothing websites, also known as fashion websites, are online platforms that sell clothing, accessories, and other related products. They allow businesses to reach a wider audience and sell their products globally. ">
+     <link rel="icon" type="logo/jpg" href="./logo.jpg">
+    <title>Sixteen CLOTHING</title>
+    <title>PROJECT-CLOTHING </title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            overflow-x: hidden;
+            background-color: plum;
+        }
+
+        .Header span {
+            font-size: larger;
+        }
+
+        h4 {
+            color: blue;
+            font-size: 15px;
+        }
+
+        .Header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: #E3E6F3;
+            padding: 0.5em;
+            z-index: 999;
+            position: sticky;
+            top: 0;
+            left: 0;
+        }
+
+        .navbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 1em;
+        }
+
+        .navbar li {
+            list-style: none;
+            padding: 1em;
+        }
+
+        .navbar li a {
+            text-decoration: none;
+            font-size: medium;
+            color: black;
+            transition: 0.3 ease;
+        }
+
+        .navbar li a:hover,
+        .navbar li a .Home {
+            color: seagreen;
+        }
+
+        #check {
+            display: none;
+        }
+
+        #checkbtn {
+            font-size: 1.5em;
+            margin-right: 10px;
+            cursor: pointer;
+            display: none;
+        }
+
+        .bg-container {
+            display: flex;
+            width: 100%;
+            height: 100vh;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background-image: url("./clothing.jpg");
+            background-size: cover;
+            background-position: center;
+        }
+
+        .bg-container h2,
+        h3 {
+            color: white;
+            background-color: rgba(0, 0, 0, 0.3);
+        }
+
+        .box2 {
+            display: flex;
+            justify-content: space-between;
+            padding: 20px;
+            border-radius: 2px solid white;
+        }
+
+        .grid-container {
+            border: 2px solid white;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            padding: 1rem;
+            gap: 10px;
+            text-align: center;
+            border-radius: 20px;
+            margin: 2px;
+        }
+
+        .grid-container .item {
+            background-color: whitesmoke;
+            width: 100%;
+            /* height: 400px;  */
+            padding: 10px 12px;
+            transition: transform 0.3s ease-in-out;
+            border: 25px;
+            cursor: pointer;
+            animation-timing-function: ease;
+            animation-duration: 2s;
+            animation-iteration-count: 1;
+        }
+
+        .grid-container .item img {
+            border-radius: 20px;
+            width: 90%;
+            /* height: 60%;  */
+            animation-name: item;
+            animation-delay: 0.5s;
+            transition: 0.5 ease;
+            box-shadow: 0px opx 15px 2px black;
+        }
+
+        .grid-container .star {
+            font-size: 10px;
+            color: red;
+        }
+
+        .grid-container .item img:hover {
+            transform: scale(1.05);
+            box-shadow: 0px opx 15px 2px black;
+        }
+
+        .about-clothing {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            padding: 10px;
+            width: 100%;
+            /* gap: 70px;  */
+            box-shadow: 1px whitesmoke;
+        }
+
+        .about-clothing .item img {
+            width: 85%;
+            height: 85%;
+        }
+
+        .top {
+            border-radius: 2px solid white;
+            box-shadow: 1px whitesmoke;
+            margin-left: 10px;
+        }
+
+        .btn {
+            cursor: pointer;
+            background-color: red;
+            height: 2em;
+        }
+
+        .news {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            align-items: center;
+            background-color: gray;
+            border: 2px solid white;
+            padding: 0.5rem;
+            margin: 2px;
+        }
+
+        @media screen and (max-width:550px) {
+            .Header .navbar {
+                display: flex;
+                flex-direction: column;
+                position: fixed;
+                top: 45px;
+                right: -100%;
+                width: fit-content;
+                /* line-height: 0; */
+                background-color: grey;
+                height: auto;
+            }
+
+            .Header .navbar>li>.Home:hover,
+            .Header .navbar>li>.About_us:hover,
+            .Header .navbar>li>.Our:hover,
+            .Header .navbar>li>.Contact_us:hover {
+                color: white;
+
+            }
+
+            #checkbtn {
+                display: block;
+            }
+
+            #check:checked~.navbar {
+                right: 0;
+            }
+
+            .Header .navbar li {
+                display: block;
+
+            }
+
+            .grid-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .box {
+                grid-row: auto;
+                grid-column: auto;
+            }
+
+            .about-clothing {
+                grid-template-columns: repeat(1, 1fr);
+                gap: 10px;
+            }
+        }
+
+        @media screen and (min-width:551px) and (max-width: 900px) {
+            .grid-container {
+                grid-template-columns: repeat(2, 1fr);
+                .box {
+                    grid-row: auto;
+                    grid-column: auto;
+                }
+            }
+
+            .about-clothing {
+                grid-template-columns: repeat(2, 1fr);
+                width: 100%;
+                height: 100%;
+            }
+        }
+
+         @keyframes item {
+            to {
+                transform: scale(0.5);
+                transition: 0.5 ease;
+            }
+        } 
+    </style>
+</head>
+
+<body>
+    <div class="Header">
+        <span><b>
+                <font color="black">SIXTEEN</font>
+                <font color="red">CLOTHING</font>
+        </span></b>
+        <input type="checkbox" id="check" name="" value="">
+        <label for="check" id="checkbtn"><i class="bi bi-list"></i></label>
+        <ul class="navbar">
+            <li> <a href="#Home" class="Home">Home</a></li>
+            <li> <a href="#products" class="Our"> Products</a></li>
+            <li> <a href="#About_us" class="About_us">About</a></li>
+            <li> <a href="" class="Contact_us">contact</a></li>
+        </ul>
+    </div>
+    <div class="bg-container" id="Home">
+        <h3>BEST OFFER </h3><br>
+        <h2> NEW ARRIVALS ON SALE</h2>
+    </div>
+    <div class="box2" id="products"><b>Latest Products</b>
+        <h5>
+            <font color="red">View All Products></font>
+        </h5>
+    </div>
+    <div class="grid-container">
+        <div class="item item1">
+            <img src="https://image.made-in-china.com/2f0j00oTRcUIJEmQqt/Wholesale-Children-Clothing-2022-Fall-Girls-Sweater-Long-Sleeved-Sweater-Cartoon-Rabbit-Children-Plus-Cashmere-Sweater-Kids-Wear.webp"
+                alt="product_01">
+            <div class="des">
+                <h4 id="Our"><b>Sweater</b></h4>
+
+                <p> Fall Girls Sweater Long-Sleeved Sweater Cartoon Rabbit Children Plus</p>
+                <div class="star">
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-half"></i>
+                    <p>Review(21)</p>
+                    <h4><b>$75.4</b></h4>
+                </div>
+            </div>
+        </div>
+
+        <div class="item item2">
+            <img src="https://m.media-amazon.com/images/I/81NwaEpKwbL.jpg" alt="product_01">
+            <div class="des">
+
+                <h4><b> Pink Piglet Toy</b></h4>
+                <p>Sutra Cute Handmade Pink Piglet Toy | Handmade Woolen Stuffed Toy | Amazing Designer </p>
+                <div class="star">
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star"></i>
+                    <p>Review(5)</p>
+                    <h4><b>$32.76</b></h4>
+                </div>
+            </div>
+        </div>
+        <div class="item item3">
+            <img src="https://baccabucci.com/cdn/shop/products/MG_5242.jpg?v=1633514122" alt="product_01">
+            <div class="des">
+
+                <h4>Bacca Bucci Afterburn</h4>
+                <p>Men's Street Fashion White Sneakers and Sports Shoes.</p>
+                <div class="star">
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-half"></i>
+                    <i class="bi bi-star"></i>
+                    <p>Review(19)</p>
+                    <h4><b>$23.4</b></h4>
+                </div>
+            </div>
+        </div>
+        <div class="item item4">
+            <img src="https://staranddaisy.in/wp-content/uploads/2022/04/8812bbnnmm.jpg" alt="product_01">
+            <div class="des">
+                <h4><b>Flower Girls Dress</b></h4>
+                <p>Flower Girls Dress Wedding Party Communion Evening Pageant Dresses
+                    Clothes Girl Dress.</p>
+                <div class="star">
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star"></i>
+                    <p>Review(17)</p>
+                    <h4><b>$23.6</b></h4>
+                </div>
+            </div>
+        </div>
+        <div class="item item5">
+            <img src="https://gina-michele.com/wp-content/uploads/2023/10/Kids-Jack-O-Lantern-Sweater-Knitting-Pattern.jpg"
+                alt="product_01">
+            <div class="des">
+                <h4><b>Gina Michele Knitting</b></h4>
+                <p>Kids Jack O Lantern Sweater Knitting Pattern.</p>
+                <div class="star">
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star"></i>
+                    <p>Review(7)</p>
+                    <h4><b>$12.4</b></h4>
+                </div>
+            </div>
+        </div>
+        <div class="item item6">
+            <img src="https://m.media-amazon.com/images/I/81BZLPJe1OL.jpg" alt="product_01">
+            <div class="des">
+                <h4><b> beauty makeup & hair dressing kit </b></h4>
+                <p>electreca pretend play beauty makeup & hair dressing kit for girls, makeup accessories with hand bag.
+                </p>
+                <div class="star">
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star"></i>
+                    <i class="bi bi-star"></i>
+                    <p>Review(8)</p>
+                    <h4><b>$78.4</b></h4>
+                </div>
+            </div>
+        </div>
+
+    </div><br><br>
+    <h2 class="top" id="About_us">About Sixteen Clothing</h2><br>
+    <div class=" about-clothing" id="About_us">
+        <div class="item text-clothing">
+
+            <p><b>
+                    <font color="blue">Looking for the best products?</font>
+                </b></p><br>
+            </b></p><br>
+            Sixteen Clothing appears to be a clothing brand that focuses on offering stylish, contemporary apparel with
+            a
+            strong emphasis on quality and individual expression, often targeting a younger demographic and promoting a
+            sense of
+            confidence and self-assured style through their designs<br>
+            <li> A kids clothing brand that offers customizable clothing for babies.</li>
+            <li> Offers made-to-measure shirts, custom shirts, and design options.</li>
+            <li> Owns the entire supply chain, from yarn to the final product.</li>
+            <li> A black-owned business that focuses on quality, inclusivity, and cultural pride.</li><br>
+            <a href=""><button type="button" class="btn btn-danger"></a>Read More</button>
+        </div>
+        <div class="item img">
+            <img
+                src="https://cdn.create.vista.com/api/media/medium/235327294/stock-photo-selective-focus-small-shopping-bag-shopping-trolley-woman-using-laptop?token=">
+        </div>
+    </div>
+    <div class="news">
+        <div class="footer">
+            <p><b>
+                    <font color="blue">Creative & Unique Sixteen Products</font>
+                </b></p><br>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+        </div>
+        <div class="button">
+            <a href=""><button type="button" class="btn btn-danger"></a>Purchase Now</button>
+        </div>
+    </div>
+    </div>
+    </div>
+</body>
+
+</html>
